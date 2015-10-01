@@ -10,6 +10,8 @@
 #import "Car.h"
 #import "Toyota.h"
 
+NSNumber* findHighestNumber (NSArray *array); // Method Declaration for Section 3 - Assignment 2 (Find the Largest Number in an Array)
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
@@ -22,5 +24,20 @@ int main(int argc, const char * argv[]) {
         [toyota drive];
         
     }
+    
+    NSLog(@"%@", findHighestNumber(@[@1, @2100, @3, @4, @56, @34, @600]));
+    
     return 0;
+}
+
+// Method Implementation for Section 3 - Assignment 2 (Find the Largest Number in an Array)
+
+NSNumber* findHighestNumber (NSArray *array) {
+    NSNumber *highestNumber = array[0];
+    for (id item in array) {
+        if (highestNumber < item) {
+            highestNumber = item;
+        }
+    }
+    return highestNumber;
 }
